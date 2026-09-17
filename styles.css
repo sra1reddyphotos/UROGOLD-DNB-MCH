@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #f3efe6;
+  --color-bg-2: #ebe4d6;
+  --color-surface: #fcfaf6;
+  --color-surface-2: #f7f2e8;
+  --color-ink: #141a1f;
+  --color-ink-soft: #2a333c;
+  --color-muted: #5c676f;
+  --color-faint: #8a939a;
+  --color-line: #d8d0c4;
+  --color-line-strong: #c4baab;
+  --color-accent: #1e4d4a;
+  --color-accent-2: #2a6a66;
+  --color-accent-fg: #f4efe4;
+  --color-nav: #10161c;
+  --color-nav-fg: #ece7dc;
+  --color-nav-muted: #9aa3a8;
+  --color-mark: #8b3a32;
+  --color-hy: #6b4e16;
+  --color-hy-bg: #f1e4c4;
+  --color-ok: #215c45;
+  --color-ok-bg: #dceae3;
+  --color-warn: #7a3f12;
+  --color-warn-bg: #f3e1cf;
+
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-sans: "Figtree", "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+
+  --shadow-soft: 0 1px 0 rgba(20, 26, 31, 0.04), 0 12px 32px -18px rgba(20, 26, 31, 0.18);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-bg);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-ink);
+    min-height: 100dvh;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 22%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
